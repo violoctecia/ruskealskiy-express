@@ -1,0 +1,65 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.school-section {
+    .image {
+        position: relative;
+        aspect-ratio: 535 / 413;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        margin-bottom: 20px;
+        img {
+            object-fit: cover;
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+}
+.certificate-section,
+.school-section {
+    padding: 100px 0;
+    @include mobile2 {
+        padding: 60px 0;
+    }
+    .wrapper {
+        border-radius: 40px;
+        max-width: 790px;
+        padding: 40px 50px;
+        background: $white;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include mobile {
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            max-width: 446px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 133%;
+            letter-spacing: -0.01em;
+            text-align: center;
+            color: $green;
+            margin: 20px 0 60px;
+            @include mobile {
+                margin: 20px 0 40px;
+            }
+        }
+        img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        a {
+            width: 100%;
+            @include mobile {
+                height: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,76 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.form-section2 {
+    background-image: url("/images/formsection2.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 240px 0 120px;
+    @include mobile {
+        padding: 100px 0;
+    }
+    .wrapper {
+        border: 1px solid rgba(247, 236, 227, 0.4);
+        border-radius: 40px;
+        backdrop-filter: blur(100px);
+        background: rgba(247, 236, 227, 0.1);
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 40px;
+        align-items: center;
+        @include mobile {
+            flex-direction: column;
+            padding: 20px;
+            gap: 30px;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 584px;
+            @include mobile {
+                max-width: none;
+                gap: 8px;
+                align-items: center;
+            }
+            h2 {
+                font-size: 56px;
+                color: $white;
+                @include mobile {
+                    text-align: center;
+                    font-size: 46px;
+                }
+                @include mobile2 {
+                    font-size: 36px;
+                }
+            }
+            p {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 133%;
+                letter-spacing: -0.01em;
+                color: #f3e7dd;
+                @include mobile {
+                    text-align: center;
+                }
+            }
+        }
+        .buttons {
+            max-width: 294px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            @include mobile {
+                max-width: none;
+            }
+            button,
+            a {
+                width: 100%;
+                height: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,235 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.tickets-section {
+  padding: 100px 0;
+  @include mobile2 {
+    padding: 60px 0;
+  }
+
+  h2 {
+    margin-bottom: 60px;
+    max-width: 780px;
+    @include mobile2 {
+      margin-bottom: 30px;
+    }
+  }
+  .dates {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    background: $white;
+    border-radius: 40px;
+    padding: 20px 30px;
+    align-items: center;
+    @media (max-width: 1200px) {
+      gap: 15px;
+    }
+    @include mobile {
+      flex-direction: column;
+      gap: 0;
+      padding: 20px;
+    }
+    .title {
+      flex: 1;
+      h3 {
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #4d7747;
+        font-family: $second-family;
+        max-width: 219px;
+        @include mobile {
+          font-size: 48px;
+          text-align: center;
+          max-width: none;
+          margin-bottom: 30px;
+        }
+        @include mobile2 {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 0 0 0 30px;
+
+      @media (max-width: 1200px) {
+        padding: 0 0 0 20px;
+      }
+      @include mobile {
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        &.sec {
+          margin-top: 40px;
+        }
+      }
+      p.month {
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 129%;
+        letter-spacing: -0.01em;
+        color: #4d7747;
+      }
+      p.date {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 133%;
+        letter-spacing: -0.01em;
+        color: #4d7747;
+        a {
+          text-decoration: underline;
+          transition: color $trans-default;
+          @include hover {
+            color: $orange-hover;
+          }
+          @include mobile {
+            line-height: 160%;
+          }
+        }
+      }
+    }
+  }
+  .tickets-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 60px;
+    @media (max-width: 1200px) {
+      gap: 15px;
+    }
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+    @include mobile2 {
+      margin-bottom: 30px;
+    }
+    .ticket {
+      border-radius: 0 0 40px 40px;
+      flex: 1;
+      padding: 40px 30px 30px;
+      background: $green;
+      display: flex;
+      flex-direction: column;
+      @media (max-width: 1200px) {
+        padding: 20px;
+      }
+      h3 {
+        font-weight: 400;
+        font-size: 56px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: $white;
+        font-family: $second-family;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        @media (max-width: 1200px) {
+          font-size: 36px;
+          margin-bottom: 24px;
+        }
+        @media (max-width: 1000px) {
+          display: block;
+        }
+        @include mobile2 {
+          font-size: 28px;
+          margin-bottom: 24px;
+        }
+      }
+      .info {
+        margin-bottom: 40px;
+        p {
+          font-weight: 700;
+          font-size: 14px;
+          line-height: 129%;
+          letter-spacing: -0.01em;
+          color: $white;
+          margin-bottom: 8px;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          li {
+            position: relative;
+            padding-left: 20px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 133%;
+            letter-spacing: -0.01em;
+            color: $white;
+
+            &::after {
+              content: "•";
+              position: absolute;
+              left: 8px;
+              top: 1px;
+            }
+          }
+        }
+      }
+      button {
+        width: 100%;
+      }
+      .last {
+        margin-top: auto;
+      }
+      .price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        gap: 12px;
+        @media (max-width: 1000px) {
+          width: fit-content;
+        }
+        .price-current {
+          font-weight: 400;
+          font-size: 36px;
+          line-height: 100%;
+          letter-spacing: -0.02em;
+          color: $white;
+          font-family: $second-family;
+          @media (max-width: 1200px) {
+            font-size: 24px;
+          }
+        }
+        .discount {
+          display: flex;
+          flex-wrap: nowrap;
+          justify-content: space-between;
+          align-items: flex-end;
+          gap: 4px;
+
+          .price-old {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 93%;
+            letter-spacing: -0.01em;
+            text-decoration: line-through;
+            color: $white;
+            font-family: $second-family;
+          }
+          .discount-value {
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 133%;
+            letter-spacing: -0.01em;
+            color: $white;
+            padding: 3px 5px 3px 4px;
+            background: $orange;
+            border-radius: 0 10px 10px 0;
+          }
+        }
+      }
+    }
+  }
+}

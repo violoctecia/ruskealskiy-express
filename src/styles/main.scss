@@ -1,0 +1,346 @@
+@use "fonts.scss";
+@use "variables.scss" as *;
+@use "mixins.scss" as *;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  list-style-type: none;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  background: $white-bg;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 20px;
+  position: relative;
+  margin: 0 auto;
+  @media (min-width: 1240px) {
+    max-width: 1200px;
+    padding: 0;
+  }
+}
+
+.h2 {
+  font-weight: 400;
+  font-size: 66px;
+  line-height: 100%;
+  letter-spacing: -0.01em;
+  color: #4d7747;
+  font-family: $second-family;
+  @include mobile {
+    font-size: 48px;
+  }
+  @include mobile2 {
+    font-size: 36px;
+    text-align: center;
+  }
+}
+
+footer {
+  background: $green;
+  padding-top: 120px;
+  @media (max-width: 1240px) {
+    border-radius: 40px 40px 0 0;
+  }
+  @include mobile {
+    padding-top: 60px;
+  }
+  .bold-text {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 129%;
+    letter-spacing: -0.01em;
+    color: #f7ece3;
+  }
+  .thin-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 133%;
+    letter-spacing: -0.01em;
+    color: #f7ece3;
+    margin: 20px 0;
+  }
+  .footer-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 145%;
+    text-align: center;
+    color: $white;
+    margin-bottom: 60px;
+    opacity: 0.7;
+    @include mobile {
+      text-align: start;
+    }
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 120px;
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 60px;
+    }
+    .info {
+      .socials {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include mobile {
+          padding-bottom: 40px;
+        }
+        a {
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $white;
+          border-radius: 100%;
+        }
+        .inst {
+          position: relative;
+          padding-right: 10px;
+          overflow: hidden;
+          @include mobile {
+            overflow: visible;
+          }
+          a {
+            position: relative;
+            &::after {
+              content: "✶";
+              border-radius: 100%;
+              background: $orange;
+              color: $white;
+              position: absolute;
+              right: -6px;
+              top: 0;
+              font-size: 10px;
+              line-height: 0;
+              width: 12px;
+              height: 12px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+          }
+          @include hover {
+            overflow: visible;
+            span {
+              opacity: 1;
+            }
+          }
+          span {
+            width: 200px;
+            position: absolute;
+            right: -225px;
+            margin: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity $trans-default;
+            opacity: 0;
+            @include mobile {
+              opacity: 0.8;
+              bottom: -50px;
+              left: -100px;
+              top: unset;
+              transform: none;
+            }
+          }
+        }
+      }
+    }
+    .routes {
+      .list {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        a {
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 137%;
+          letter-spacing: -0.01em;
+          color: $white;
+
+          transition: color $trans-default;
+
+          @include hover {
+            color: $orange-hover;
+          }
+        }
+      }
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      a {
+        transition: color $trans-default;
+        @include hover {
+          color: $orange-hover;
+        }
+      }
+    }
+    .routes,
+    .info,
+    .links {
+      flex: 1;
+      max-width: 320px;
+    }
+  }
+  .last-info {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 133%;
+      letter-spacing: -0.01em;
+      color: $white;
+    }
+  }
+  .footer-logo {
+    margin-top: 10px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.breadcrumbs {
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    li {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 136%;
+      color: $green;
+      font-family: $second-family;
+      padding-right: 45px;
+      position: relative;
+      &::after {
+        content: "/";
+        position: absolute;
+        font-weight: 400;
+        font-size: 11px;
+        line-height: 171%;
+        color: #858585;
+        font-family: $second-family;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+      a {
+        transition: color $trans-default;
+
+        @include hover {
+          color: $orange-hover;
+        }
+      }
+    }
+  }
+}
+
+.safe-top {
+  padding-top: 160px;
+  padding-bottom: 40px;
+  @include mobile {
+    padding: 120px 0 30px;
+  }
+}
+
+.JournalPageArticle {
+  .container {
+    max-width: 900px;
+  }
+  .article {
+    margin-top: 100px;
+    @include mobile2 {
+      margin-top: 60px;
+    }
+
+    .image {
+      position: relative;
+      aspect-ratio: 960 / 550;
+      width: 100%;
+      height: auto;
+      border-radius: 40px;
+      overflow: hidden;
+      img {
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+    .content {
+      font-size: 14px;
+      line-height: 129%;
+      letter-spacing: -0.01em;
+      color: #4d7747;
+      font-weight: 400;
+      margin: 40px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+      strong {
+        font-weight: 700;
+      }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+      margin-bottom: 100px;
+      @include mobile2 {
+        margin-bottom: 60px;
+      }
+      img {
+        border-radius: 100px;
+      }
+      p {
+        font-family: $second-family;
+        font-size: 22px;
+        color: $green;
+      }
+    }
+  }
+}
+
+.doc {
+  .content {
+    margin-top: 60px;
+    font-size: 14px;
+    line-height: 1.37;
+    color: $green;
+    letter-spacing: -0.1px;
+    font-weight: 400;
+    strong {
+      font-weight: 700;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+}

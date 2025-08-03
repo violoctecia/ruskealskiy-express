@@ -1,0 +1,69 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.form-section {
+    padding: 120px 0;
+    background-image: url("/images/formsection.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    @include mobile2 {
+        padding: 100px 0;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        @include mobile2 {
+            gap: 80px;
+        }
+    }
+    h2 {
+        text-align: center;
+        max-width: 943px;
+        color: $white;
+    }
+    form {
+        border: 1px solid rgba(243, 231, 221, 0.4);
+        border-radius: 40px;
+        max-width: 580px;
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+
+        .inputs {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 10px;
+
+            @include mobile2 {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 15px;
+            }
+            input {
+                flex: 1;
+                height: 50px;
+            }
+        }
+        .phone {
+            height: 50px;
+            margin-bottom: 12px;
+            @include mobile2 {
+                margin-bottom: 15px;
+            }
+        }
+        button {
+            width: 100%;
+            margin-top: 12px;
+            height: 50px;
+            @include mobile2 {
+                margin-top: 15px;
+            }
+        }
+    }
+}

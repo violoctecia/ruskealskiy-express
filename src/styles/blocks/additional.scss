@@ -1,0 +1,72 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.additional-section {
+    .list {
+        margin-top: 60px;
+        display: flex;
+        gap: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        @include mobile2 {
+            margin-top: 30px;
+            gap: 30px;
+        }
+        .block {
+            flex: 1 1 400px;
+            background: $green;
+            border-radius: 0 0 40px 40px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 250px;
+            @include mobile2 {
+                min-height: unset;
+            }
+            h3 {
+                font-size: 56px;
+                color: $white;
+                margin-bottom: 24px;
+                @include mobile2 {
+                    font-size: 24px;
+                    text-align: start;
+                    margin-bottom: 12px;
+                }
+            }
+            .info {
+                margin-top: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                  @include mobile2 {
+                   gap: 50px;
+                }
+                p.text {
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 133%;
+                    letter-spacing: -0.01em;
+                    color: $white;
+                }
+                p.price {
+                    font-weight: 400;
+                    font-size: 36px;
+                    line-height: 100%;
+                    letter-spacing: -0.02em;
+                    color: $white;
+                    font-family: $second-family;
+                }
+                button {
+                    width: 100%;
+                    background: $white;
+                    color: $green;
+                    @include hover {
+                        color: $white;
+                        background: $orange-hover;
+                    }
+                }
+            }
+        }
+    }
+}

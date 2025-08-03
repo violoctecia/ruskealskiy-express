@@ -1,0 +1,96 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.hero {
+    min-height: 792px;
+    height: 100svh;
+    position: relative;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1442px;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+    .container {
+        padding-top: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+        @include mobile {
+            justify-content: center;
+        }
+    }
+    h1 {
+        font-family: $second-family;
+        max-width: 847px;
+        font-weight: 400;
+        font-size: 80px;
+        line-height: 100%;
+        letter-spacing: -0.01em;
+        color: #f7ece3;
+        margin-bottom: 8px;
+        @include mobile {
+            font-size: 60px;
+        }
+        @include mobile2 {
+            font-size: 42px;
+            margin-bottom: 48px;
+        }
+    }
+    .form-wrapper {
+        border: 1px solid rgba(247, 236, 227, 0.4);
+        border-radius: 40px;
+        padding: 47px 40px;
+        width: 100%;
+        backdrop-filter: blur(100px);
+        background: rgba(247, 236, 227, 0.1);
+        margin-bottom: 10vh;
+        @include mobile {
+            padding: 20px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 120%;
+            letter-spacing: -0.02em;
+            color: #f7ece3;
+            margin-bottom: 32px;
+            max-width: 750px;
+
+            @include mobile {
+                font-size: 12px;
+                line-height: 140%;
+            }
+        }
+        form {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 22px;
+            input,
+            button {
+                flex: 1;
+            }
+            button {
+                @include mobile {
+                    height: 50px;
+                }
+            }
+            @include mobile {
+                gap: 15px;
+                flex-wrap: wrap;
+                input {
+                    flex: 1 1 300px;
+                }
+                button {
+                    flex: 1 1 100%;
+                }
+            }
+        }
+    }
+}

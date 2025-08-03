@@ -1,0 +1,50 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.main-button {
+    border-radius: 100px;
+    background: $orange;
+    width: fit-content;
+
+    font-weight: 700;
+    font-size: 13px;
+
+    letter-spacing: -0.01em;
+    color: $white;
+    padding: 12px 24px;
+    text-align: center;
+    transition: all $trans-default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    @include hover {
+        background: $orange-hover;
+        svg path {
+            fill: $orange-hover;
+            stroke: $orange-hover;
+        }
+    }
+    
+
+    &.white {
+        background: none;
+        border: 1px solid $white;
+
+        @include hover {
+            border: 1px solid $orange-hover;
+            color: $orange-hover;
+        }
+    }
+    &.green {
+        background: none;
+        color: green;
+        border: 1px solid $green;
+
+        @include hover {
+            border: 1px solid $orange-hover;
+            color: $orange-hover;
+        }
+    }
+}

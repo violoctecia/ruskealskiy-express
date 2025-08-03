@@ -1,0 +1,27 @@
+@mixin hover {
+  @media (min-width: 1000px) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin vw1100 {
+  @media (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 850px) {
+    @content;
+  }
+}
+
+@mixin mobile2 {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
+
+

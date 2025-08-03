@@ -1,0 +1,24 @@
+import '../styles/main.scss';
+import Header from '@/components/blocks/Header';
+import Footer from '@/components/blocks/Footer';
+import FormModal from '@/components/modals/FormModal';
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+    return (
+        <html lang="ru">
+            <head>
+                <meta name="theme-color" content="#f3e7dd" />
+                <meta name="robots" content="noindex, nofollow" />
+                {/* Удалить */}
+                <meta charSet="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+            </head>
+            <body>
+                <Header />
+                {children}
+                <Footer />
+                <FormModal />
+            </body>
+        </html>
+    );
+}

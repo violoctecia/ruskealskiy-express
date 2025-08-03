@@ -1,0 +1,173 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.exc-other {
+  padding: 100px 0;
+  @include mobile2 {
+    padding: 60px 0;
+  }
+  h2 {
+    margin-bottom: 60px;
+    max-width: 720px;
+    @include mobile2 {
+      margin-bottom: 40px;
+    }
+  }
+  .title {
+    font-size: 56px;
+    margin-bottom: 30px;
+    @include mobile {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+  }
+  .routes {
+    margin-top: 100px;
+    @include mobile2 {
+      margin-top: 60px;
+    }
+    .col {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      span {
+        font-family: $second-family;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 127%;
+        letter-spacing: -0.01em;
+        color: #4d7747;
+        align-self: center;
+        padding: 0 20px;
+        display: none;
+        @include mobile2 {
+          display: block;
+        }
+      }
+      p {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 127%;
+        letter-spacing: -0.01em;
+        color: #4d7747;
+        border-radius: 100px;
+        padding: 11px 20px;
+        background: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        @include mobile {
+          font-size: 12px;
+          line-height: 148%;
+        }
+      }
+    }
+  }
+  .times {
+    .times-list {
+      border-radius: 40px;
+      padding: 30px;
+      background: $white;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      button {
+        display: none;
+        @include mobile2 {
+          display: block;
+          width: 100%;
+        }
+      }
+      @include mobile {
+        padding: 20px;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: flex-start;
+        @media (max-width: 1100px) {
+          flex-direction: column;
+          gap: 10px;
+        }
+        .time {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          p.time-value {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 89%;
+            letter-spacing: -0.02em;
+            color: #4d7747;
+            width: fit-content;
+            font-family: $second-family;
+            @include mobile {
+              font-size: 24px;
+              line-height: 100%;
+              letter-spacing: -0.03em;
+            }
+          }
+          .thin-text {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 133%;
+            letter-spacing: -0.01em;
+            color: #4d7747;
+            @include mobile {
+              font-size: 10px;
+              line-height: 150%;
+            }
+          }
+        }
+
+        .text {
+          max-width: 313px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          @include mobile {
+            gap: 2px;
+          }
+          .time-title {
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 129%;
+            letter-spacing: -0.01em;
+            color: #4d7747;
+            @include mobile {
+              font-size: 12px;
+              line-height: 150%;
+            }
+          }
+          .time-text {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 133%;
+            letter-spacing: -0.01em;
+            color: #4d7747;
+            @include mobile {
+              font-size: 10px;
+              line-height: 150%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    @include mobile2 {
+      flex-direction: column;
+      gap: 40px;
+    }
+    .col {
+      flex: 1;
+      max-width: 580px;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.modal {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    
+    &__wrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        min-height: 100%;
+        
+        @include mobile2 {
+            padding: 20px 0 0 0;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+    }
+    &__content {
+        border-radius: 40px;
+        padding: 40px;
+        background: $green;
+        max-width: 600px;
+        position: relative;
+        @include mobile2 {
+            padding: 60px 20px 60px;
+            border-radius: 40px 40px 0 0;
+        }
+
+        button.close {
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            background: none;
+        }
+        .title {
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 120%;
+            letter-spacing: -0.02em;
+            text-align: center;
+            color: $white;
+            font-family: $second-family;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 120%;
+            letter-spacing: -0.01em;
+            text-align: center;
+            color: $white;
+            margin-bottom: 45px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+
+            .inputs {
+                display: flex;
+                gap: 15px;
+                margin-bottom: 15px;
+                @include mobile2 {
+                    flex-direction: column;
+                }
+                input {
+                    flex: 1;
+                    height: 50px;
+                }
+            }
+            .phone {
+                height: 50px;
+                margin-bottom: 25px;
+            }
+            button {
+                width: 100%;
+                margin-top: 35px;
+                height: 50px;
+            }
+        }
+    }
+}

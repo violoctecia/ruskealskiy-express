@@ -1,0 +1,79 @@
+@use "../variables.scss" as *;
+@use "../mixins.scss" as *;
+
+.accordion-item {
+  width: 100%;
+  border-radius: 20px;
+  background: $white-bg;
+
+  button {
+    cursor: pointer;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: none;
+    @include mobile2 {
+      padding: 12px 24px;
+    }
+    .accordion-title {
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 137%;
+      color: #4d7747;
+      text-align: start;
+      max-width: calc(100% - 60px);
+      @include mobile2 {
+        font-size: 12px;
+      }
+    }
+
+    &[aria-expanded="true"] {
+      .accordion-icon {
+        background: $orange;
+
+        svg {
+          transform: rotate(45deg);
+          path {
+            stroke: $white-bg;
+          }
+        }
+      }
+    }
+
+    .accordion-icon {
+      border-radius: 100%;
+      background: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+
+      svg {
+        transition: all $trans-default;
+      }
+    }
+
+    @include hover {
+      .accordion-icon {
+        background: $orange;
+        svg path {
+          stroke: $white-bg;
+        }
+      }
+    }
+  }
+
+  .accordion-body {
+    .accordion-body__content {
+      padding: 0 0 15px 0;
+      margin: 0 30px;
+      @include mobile2 {
+        padding: 0 0 12px 0;
+        margin: 0 24px;
+      }
+    }
+  }
+}

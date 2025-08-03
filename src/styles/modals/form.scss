@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    
+
     &__wrapper {
         position: relative;
         display: flex;
@@ -23,11 +23,97 @@
         padding: 20px;
         width: 100%;
         min-height: 100%;
-        
+
         @include mobile2 {
             padding: 20px 0 0 0;
             align-items: flex-end;
             overflow: hidden;
+            &.gallery {
+                padding: 20px;
+            }
+        }
+        &.gallery {
+             @include mobile {
+                       align-items: center;
+                    }
+            .modal__content {
+                background: none;
+                max-width: fit-content;
+                border-radius: 0;
+                position: relative;
+                max-width: 800px;
+                width: 100%;
+                padding: 0;
+                padding: 0 60px;
+                @include mobile {
+                        padding: 0;
+                    }
+                .swiper {
+                    position: static;
+                    width: 100%;
+                }
+                .swiper-button-next,
+                .swiper-button-prev {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    z-index: 10;
+                    width: 30px;
+                    height: 30px;
+                    color: $orange;
+                    background-color: $white;
+                    border-radius: 100px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &::after {
+                        font-size: 12px;
+                    }
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                .swiper-button-next {
+                    right: 0; // можно настроить
+                }
+
+                .swiper-button-prev {
+                    left: 0;
+                }
+
+                .swiper-pagination {
+                    bottom: -40px;
+                    text-align: center;
+
+                    .swiper-pagination-bullet {
+                        background: white;
+                        opacity: 0.5;
+                        margin: 0 4px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 100%;
+ @include mobile {
+                      width: 5px;
+                      height: 5px;
+                    }
+                        &-active {
+                            opacity: 1;
+                            background: $orange;
+                        }
+                    }
+                }
+
+                img {
+                    aspect-ratio: 500 / 350;
+                    width: 100%;
+                    height: auto;
+                }
+                button.close {
+                    top: -58px;
+                    right: 0;
+                }
+            }
         }
     }
     &__content {
@@ -45,9 +131,21 @@
             cursor: pointer;
             padding: 10px;
             position: absolute;
-            right: 15px;
-            top: 15px;
-            background: none;
+            right: 12px;
+            top: 12px;
+            width: 36px;
+            height: 36px;
+            color: $orange;
+            background-color: $white;
+            border-radius: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            @include mobile2 {
+                right: 16px;
+                top: -12px;
+            }
         }
         .title {
             font-weight: 400;

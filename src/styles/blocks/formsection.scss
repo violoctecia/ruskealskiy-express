@@ -34,6 +34,9 @@
         padding: 40px;
         display: flex;
         flex-direction: column;
+        @include mobile2 {
+            padding: 20px;
+        }
 
         .inputs {
             display: flex;

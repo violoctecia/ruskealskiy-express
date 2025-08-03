@@ -2,6 +2,7 @@ import '../styles/main.scss';
 import Header from '@/components/blocks/Header';
 import Footer from '@/components/blocks/Footer';
 import FormModal from '@/components/modals/FormModal';
+import GalleryModal from '@/components/modals/GalleryModal';
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
     return (
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 {children}
                 <Footer />
                 <FormModal />
+                <GalleryModal />
             </body>
         </html>
     );

@@ -21,7 +21,6 @@ export default function Component() {
                     <div className="image">
                         <Image priority src="/images/forschools.png" alt="" fill />
                     </div>
-
                     <Button onClick={open}>Оставить заявку на оформление</Button>
                 </div>
             </div>

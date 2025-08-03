@@ -1,7 +1,12 @@
+'use client';
 import Button from '../buttons/Button';
 import '@/styles/blocks/additional.scss';
+import { usePopupStore } from '@/stores/popupStore';
 
 export default function Component() {
+    const open = usePopupStore((s) => s.open);
+    const galleryOpen = usePopupStore((s) => s.openGallery);
+
     return (
         <section className="additional-section">
             <div className="container">
@@ -25,14 +30,16 @@ export default function Component() {
                         <h3 className="h2">Вагон-ресторан</h3>
                         <div className="info">
                             <p className="text">В наличии: горячие и холодные блюда, десерты, снеки и напитки</p>
-                            <Button isWhite>Смотреть меню</Button>
+                            <Button  onClick={galleryOpen} isWhite>Смотреть меню</Button>
                         </div>
                     </div>
                     <div className="block">
                         <h3 className="h2">индивидуальный запрос</h3>
                         <div className="info">
                             <p className="text">Сообщите о ваших пожеланиях и мы постараемся их осуществить</p>
-                            <Button isWhite>Оставить заявку</Button>
+                            <Button isWhite onClick={open}>
+                                Оставить заявку
+                            </Button>
                         </div>
                     </div>
                 </div>

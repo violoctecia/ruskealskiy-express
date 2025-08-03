@@ -43,7 +43,7 @@ export default function Component() {
                 <div className="modal__content">
                     <button onClick={close} className="close" aria-label="Закрыть модалку">
                         <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L16 16M1 16L16 1" stroke="#F7ECE3" />
+                            <path d="M1 1L16 16M1 16L16 1" stroke="#ed7144" />
                         </svg>
                     </button>
                     <p className="title">забронируйте экскурсию онлайн</p>

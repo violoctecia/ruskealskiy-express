@@ -8,6 +8,7 @@ import InputCheckbox from '../buttons/InputCheckbox';
 import Button from '../buttons/Button';
 import { useEffect } from 'react';
 import { lockBodyScroll, unlockBodyScroll } from '@/composables/bodyScrollLock';
+import { handleSubmit } from '@/composables/formSubmit';
 
 export default function Component() {
     const { isOpen, close } = usePopupStore();
@@ -48,7 +49,9 @@ export default function Component() {
                     </button>
                     <p className="title">забронируйте экскурсию онлайн</p>
                     <p className="subtitle">Оставьте свои данные и мы свяжемся с вами</p>
-                    <form>
+
+                    <form name="lead" onSubmit={handleSubmit}>
+                        <input type="hidden" name="form-name" value="lead" />
                         <div className="inputs">
                             <InputText placeholder="Введите имя" type="name" id="name" />
                             <InputText placeholder="Введите фамилию" type="surname" id="surname" />

@@ -108,6 +108,15 @@ header {
         .nav-wrapper {
             transform: translateX(0);
         }
+        nav {
+            .nav-item {
+                .options {
+                    .options-wrapper {
+                        background: none;
+                    }
+                }
+            }
+        }
         a.logo {
             color: $green;
         }

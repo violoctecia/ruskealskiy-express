@@ -1,3 +1,4 @@
+'use client'
 import '@/styles/blocks/hero.scss';
 import Image from 'next/image';
 import Button from '../buttons/Button';

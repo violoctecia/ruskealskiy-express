@@ -15,11 +15,6 @@ export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         return;
     }
 
-    if (!checkbox) {
-        toast.error('Вы должны согласиться с политикой конфиденциальности.');
-        return;
-    }
-
     const formData = new URLSearchParams();
     formData.append('name', `${name} ${surname}`);
     formData.append('phone', phone);

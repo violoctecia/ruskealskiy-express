@@ -12,13 +12,13 @@ export default function CheckboxConsent() {
         <div className="checkboxWrapper">
             <input
                 type="checkbox"
-                id="consent"
-                name="consent"
+                id="checkbox"
+                name="checkbox"
                 required
                 checked={checkbox}
                 onChange={(e) => setCheckbox(e.target.checked)}
             />
-            <label htmlFor="consent" onClick={(e) => e.preventDefault()}>
+            <label htmlFor="checkbox" onClick={(e) => e.preventDefault()}>
                 Я соглашаюсь на обработку своих персональных данных и с условиями <Link href='/privacy-policy'>Политики конфиденциальности</Link>
             </label>
         </div>

@@ -20,8 +20,8 @@ export default function Component() {
                         Рускеальский экспресс и Ретропоезд курсируют по маршруту Сортавала — Горный парк Рускеала. Актуальное расписание,
                         стоимость билетов и бронирование экскурсий онлайн доступны на нашем сайте и по телефону
                     </p>
-                    <form name="lead" onSubmit={handleSubmit}>
-                        <input type="hidden" name="form-name" value="lead" />
+                    <form name="form1" onSubmit={handleSubmit}>
+                        <input type="hidden" name="form-name" value="form1" />
                         <InputText placeholder="Как вас зовут?" type="name" id="name" />
                         <InputPhone />
                         <Button type="submit">Отправить заявку</Button>

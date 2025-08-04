@@ -28,6 +28,7 @@ export default function Component() {
                     </form>
                 </div>
             </div>
+            
         </section>
     );
 }

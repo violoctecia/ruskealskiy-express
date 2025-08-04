@@ -29,7 +29,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                     closeOnClick={false}
                     rtl={false}
                    
-                    draggable
                     pauseOnHover
                     theme="colored"
                     

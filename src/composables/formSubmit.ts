@@ -15,9 +15,10 @@ export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         return;
     }
 
-    const formData = new URLSearchParams();
-    formData.append('name', `${name} ${surname}`);
-    formData.append('phone', phone);
+    // @ts-ignore
+    const formData = new FormData(event.target);
+    // formData.append('name', `${name} ${surname}`);
+    // formData.append('phone', phone);
     // formData.append('consent', checkbox ? 'true' : 'false');
 
     try {
@@ -26,7 +27,8 @@ export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
-            body: formData.toString(),
+            // @ts-ignore
+            body: new URLSearchParams(formData).toString(),
         });
 
         if (!response.ok) {
@@ -41,7 +43,6 @@ export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         store.setSurname('');
         store.setPhone('');
         store.setCheckbox(false);
-
     } catch (error) {
         toast.error('Произошла ошибка при отправке формы. Попробуйте ещё раз.');
         console.error(error);

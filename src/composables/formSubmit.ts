@@ -21,6 +21,8 @@ export const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     // formData.append('phone', phone);
     // formData.append('consent', checkbox ? 'true' : 'false');
 
+
+    
     try {
         const response = await fetch('/__forms.html', {
             method: 'POST',

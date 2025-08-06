@@ -1,6 +1,8 @@
 import Breadcrumbs from '@/components/blocks/Breadcrumbs';
 import ForSchool from '@/components/blocks/ForSchool';
 import FormSection from '@/components/blocks/FormSection';
+import Gallery from '@/components/blocks/Gallery';
+import SchoolAdvantages from '@/components/blocks/SchoolAdvantages';
 
 export default function Component() {
     const breadcrumbItems = [
@@ -16,7 +18,15 @@ export default function Component() {
             </div>
             <Breadcrumbs items={breadcrumbItems} />
             <ForSchool/>
+            <SchoolAdvantages/>
             <FormSection />
+            <Gallery title="ваш отдых запомнится надолго!" images={[
+                '/images/gallery-school-desktop.png',
+                '/images/gallery-school1.png',
+                '/images/gallery-school2.png',
+                '/images/gallery-school3.png',
+                '/images/gallery-school4.png',
+            ]} />
         </main>
     );
 }

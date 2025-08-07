@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
     experimental: {
         inlineCss: true
     },
-    trailingSlash: true,
 };
 
 export default nextConfig;

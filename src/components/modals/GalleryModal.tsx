@@ -15,7 +15,7 @@ export default function Component() {
     const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        if (!isGalleryOpen) return; // Выходим из эффекта, если модалка закрыта
+        if (!isGalleryOpen) return;
 
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         const originalPaddingRight = document.body.style.paddingRight;

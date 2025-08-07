@@ -61,6 +61,7 @@ header {
       .nav-item {
         .options {
           .options-wrapper {
+            border: 1px solid $green;
             background: $white;
           }
         }
@@ -127,6 +128,7 @@ header {
       .nav-item {
         .options {
           .options-wrapper {
+            border: none;
             background: none;
           }
         }

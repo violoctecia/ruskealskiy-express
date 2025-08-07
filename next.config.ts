@@ -1,10 +1,10 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  experimental: {
-        inlineCss: true,
+    experimental: {
+        inlineCss: true
     },
+    trailingSlash: true,
 };
 
 export default nextConfig;

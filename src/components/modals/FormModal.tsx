@@ -17,7 +17,6 @@ export default function Component() {
     useEffect(() => {
         if (!isOpen) return;
 
-
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         const originalPaddingRight = document.body.style.paddingRight;
 

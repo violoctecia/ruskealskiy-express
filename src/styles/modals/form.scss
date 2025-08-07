@@ -2,195 +2,220 @@
 @use "../mixins.scss" as *;
 
 .modal {
-    position: fixed;
-    z-index: 999;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transition: all $trans-default;
+
+  transform: scale(1.2);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+
+  &.modal--active {
+    transform: scale(1);
     background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(12px);
+    opacity: 1;
+  }
 
+  &__wrapper {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    overflow-y: auto;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    min-height: 100%;
 
-    &__wrapper {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    @include mobile2 {
+      padding: 20px 0 0 0;
+      align-items: flex-end;
+      overflow: hidden;
+      &.gallery {
         padding: 20px;
-        width: 100%;
-        min-height: 100%;
-
-        @include mobile2 {
-            padding: 20px 0 0 0;
-            align-items: flex-end;
-            overflow: hidden;
-            &.gallery {
-                padding: 20px;
-            }
-        }
-        &.gallery {
-             @include mobile {
-                       align-items: center;
-                    }
-            .modal__content {
-                background: none;
-                max-width: fit-content;
-                border-radius: 0;
-                position: relative;
-                max-width: 800px;
-                width: 100%;
-                padding: 0;
-                padding: 0 60px;
-                @include mobile {
-                        padding: 0;
-                    }
-                .swiper {
-                    position: static;
-                    width: 100%;
-                }
-                .swiper-button-next,
-                .swiper-button-prev {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    z-index: 10;
-                    width: 30px;
-                    height: 30px;
-                    color: $orange;
-                    background-color: $white;
-                    border-radius: 100px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    &::after {
-                        font-size: 12px;
-                    }
-                    @include mobile {
-                        display: none;
-                    }
-                }
-
-                .swiper-button-next {
-                    right: 0; // можно настроить
-                }
-
-                .swiper-button-prev {
-                    left: 0;
-                }
-
-                .swiper-pagination {
-                    bottom: -40px;
-                    text-align: center;
-
-                    .swiper-pagination-bullet {
-                        background: white;
-                        opacity: 0.5;
-                        margin: 0 4px;
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 100%;
- @include mobile {
-                      width: 5px;
-                      height: 5px;
-                    }
-                        &-active {
-                            opacity: 1;
-                            background: $orange;
-                        }
-                    }
-                }
-
-                img {
-                    aspect-ratio: 500 / 350;
-                    width: 100%;
-                    height: auto;
-                }
-                button.close {
-                    top: -58px;
-                    right: 0;
-                }
-            }
-        }
+      }
     }
-    &__content {
-        border-radius: 40px;
-        padding: 40px;
-        background: $green;
-        max-width: 600px;
+
+    &.gallery {
+      @include mobile {
+        align-items: center;
+      }
+
+      .modal__content {
+        background: none;
+        max-width: fit-content;
+        border-radius: 0;
         position: relative;
-        @include mobile2 {
-            padding: 60px 20px 60px;
-            border-radius: 40px 40px 0 0;
+        max-width: 800px;
+        width: 100%;
+        padding: 0;
+        padding: 0 60px;
+        @include mobile {
+          padding: 0;
+        }
+
+        .swiper {
+          position: static;
+          width: 100%;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          z-index: 10;
+          width: 30px;
+          height: 30px;
+          color: $orange;
+          background-color: $white;
+          border-radius: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &::after {
+            font-size: 12px;
+          }
+
+          @include mobile {
+            display: none;
+          }
+        }
+
+        .swiper-button-next {
+          right: 0; // можно настроить
+        }
+
+        .swiper-button-prev {
+          left: 0;
+        }
+
+        .swiper-pagination {
+          bottom: -40px;
+          text-align: center;
+
+          .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+            margin: 0 4px;
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            @include mobile {
+              width: 5px;
+              height: 5px;
+            }
+
+            &-active {
+              opacity: 1;
+              background: $orange;
+            }
+          }
+        }
+
+        img {
+          aspect-ratio: 500 / 350;
+          width: 100%;
+          height: auto;
         }
 
         button.close {
-            cursor: pointer;
-            padding: 10px;
-            position: absolute;
-            right: 12px;
-            top: 12px;
-            width: 36px;
-            height: 36px;
-            color: $orange;
-            background-color: $white;
-            border-radius: 100px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            @include mobile2 {
-                right: 16px;
-                top: -12px;
-            }
+          top: -58px;
+          right: 0;
         }
-        .title {
-            font-weight: 400;
-            font-size: 36px;
-            line-height: 120%;
-            letter-spacing: -0.02em;
-            text-align: center;
-            color: $white;
-            font-family: $second-family;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 120%;
-            letter-spacing: -0.01em;
-            text-align: center;
-            color: $white;
-            margin-bottom: 45px;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-
-            .inputs {
-                display: flex;
-                gap: 15px;
-                margin-bottom: 15px;
-                @include mobile2 {
-                    flex-direction: column;
-                }
-                input {
-                    flex: 1;
-                    height: 50px;
-                }
-            }
-            .phone {
-                height: 50px;
-                margin-bottom: 25px;
-            }
-            button {
-                width: 100%;
-                margin-top: 35px;
-                height: 50px;
-            }
-        }
+      }
     }
+  }
+
+  &__content {
+    border-radius: 40px;
+    padding: 40px;
+    background: $green;
+    max-width: 600px;
+    position: relative;
+    @include mobile2 {
+      padding: 60px 20px 60px;
+      border-radius: 40px 40px 0 0;
+    }
+
+    button.close {
+      cursor: pointer;
+      padding: 10px;
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      width: 36px;
+      height: 36px;
+      color: $orange;
+      background-color: $white;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      @include mobile2 {
+        right: 16px;
+        top: -12px;
+      }
+    }
+
+    .title {
+      font-weight: 400;
+      font-size: 36px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      text-align: center;
+      color: $white;
+      font-family: $second-family;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 120%;
+      letter-spacing: -0.01em;
+      text-align: center;
+      color: $white;
+      margin-bottom: 45px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+
+      .inputs {
+        display: flex;
+        gap: 15px;
+        margin-bottom: 15px;
+        @include mobile2 {
+          flex-direction: column;
+        }
+
+        input {
+          flex: 1;
+          height: 50px;
+        }
+      }
+
+      .phone {
+        height: 50px;
+        margin-bottom: 25px;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 35px;
+        height: 50px;
+      }
+    }
+  }
 }

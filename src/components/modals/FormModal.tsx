@@ -6,15 +6,17 @@ import InputText from '../buttons/InputText';
 import InputPhone from '../buttons/InputPhone';
 import InputCheckbox from '../buttons/InputCheckbox';
 import Button from '../buttons/Button';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { lockBodyScroll, unlockBodyScroll } from '@/composables/bodyScrollLock';
 import { handleSubmit } from '@/composables/formSubmit';
 
 export default function Component() {
     const { isOpen, close } = usePopupStore();
+    const [isActive, setIsActive] = useState(false);
 
     useEffect(() => {
-        if (!isOpen) return; // Выходим из эффекта, если модалка закрыта
+        if (!isOpen) return;
+
 
         const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
         const originalPaddingRight = document.body.style.paddingRight;
@@ -24,10 +26,15 @@ export default function Component() {
             document.body.style.paddingRight = `${scrollbarWidth}px`;
         }
 
+        const timeout = setTimeout(() => setIsActive(true), 0);
+
         return () => {
+            clearTimeout(timeout);
             unlockBodyScroll();
             document.body.style.paddingRight = originalPaddingRight;
+            setIsActive(false);
         };
+
     }, [isOpen]);
 
     if (!isOpen) return null;
@@ -39,7 +46,7 @@ export default function Component() {
     };
 
     return (
-        <div className="modal">
+        <div className={`modal ${isActive ? 'modal--active' : ''}`}>
             <div className="modal__wrapper" onClick={handleBackgroundClick}>
                 <div className="modal__content">
                     <button onClick={close} className="close" aria-label="Закрыть модалку">

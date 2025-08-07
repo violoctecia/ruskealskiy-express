@@ -4,6 +4,13 @@ import FormSection from '@/components/blocks/FormSection';
 import Gallery from '@/components/blocks/Gallery';
 import CertConditions from '@/components/blocks/CertConditions';
 
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+    title: '',
+    description: '',
+    keywords: '',
+};
+
 export default function Component() {
     const breadcrumbItems = [
         { label: 'Главная страница', href: '/' },

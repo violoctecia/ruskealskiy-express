@@ -50,8 +50,8 @@ export default function Component() {
                     <p className="title">забронируйте экскурсию онлайн</p>
                     <p className="subtitle">Оставьте свои данные и мы свяжемся с вами</p>
 
-                    <form name="lead" onSubmit={handleSubmit}>
-                        <input type="hidden" name="form-name" value="lead" />
+                    <form name="form2" onSubmit={handleSubmit}>
+                        <input type="hidden" name="form-name" value="form2" />
                         <div className="inputs">
                             <InputText placeholder="Введите имя" type="name" id="name" />
                             <InputText placeholder="Введите фамилию" type="surname" id="surname" />

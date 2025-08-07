@@ -1,15 +1,18 @@
+'use client';
 import Button from '../buttons/Button';
 import InputText from '../buttons/InputText';
 import InputPhone from '../buttons/InputPhone';
 import InputCheckbox from '../buttons/InputCheckbox'
 import '@/styles/blocks/formsection.scss';
+import { handleSubmit } from '@/composables/formSubmit';
 
 export default function Component() {
     return (
         <section className="form-section">
             <div className="container">
                 <h2 className="h2">Забронируйте экскурсию прямо сейчас, заполнив заявку онлайн</h2>
-                <form>
+                <form name="form2" onSubmit={handleSubmit}>
+                    <input type="hidden" name="form-name" value="form2" />
                     <div className="inputs">
                         <InputText placeholder="Введите имя" type="name" id="name" />
                         <InputText placeholder="Введите фамилию" type="surname" id="surname" />

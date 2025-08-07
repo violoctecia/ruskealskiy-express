@@ -1,6 +1,13 @@
 import Breadcrumbs from '@/components/blocks/Breadcrumbs';
 import Journal from '@/components/blocks/Journal';
 
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+    title: '',
+    description: '',
+    keywords: '',
+};
+
 export default function JournalPage() {
     const breadcrumbItems = [
         { label: 'Главная страница', href: '/' },

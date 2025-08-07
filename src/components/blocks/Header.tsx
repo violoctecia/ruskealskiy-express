@@ -141,7 +141,7 @@ export default function Component() {
                         <svg width="21" height="10" viewBox="0 0 21 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.411743 0.5H21M0.411743 9.5H21" stroke="#F7ECE3" />
                         </svg>
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="21" height="21" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.355957 0.5L15.356 15.5M0.355957 15.5L15.356 0.5" stroke="#ED7144" />
                         </svg>
                     </Button>

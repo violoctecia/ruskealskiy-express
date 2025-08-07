@@ -4,6 +4,13 @@ import Image from 'next/image';
 type tParams = Promise<{ slug: string[] }>;
 import { notFound } from 'next/navigation';
 
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+    title: '',
+    description: '',
+    keywords: '',
+};
+
 export default async function JournalPageArticle({ params }: { params: tParams }) {
     const { slug } = await params;
 

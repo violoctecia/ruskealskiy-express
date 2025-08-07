@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+export const metadata: Metadata = {
+    title: '',
+    description: '',
+    keywords: '',
+};
+
 export default function Component() {
     return (
         <main className="doc safe-top">
